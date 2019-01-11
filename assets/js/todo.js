@@ -1,6 +1,6 @@
 //Google Auth
 var uiConfig = {
-signInSuccessUrl: 'http://localhost:8080/',
+signInSuccessUrl: 'https://bookofbash.github.io/todolist/',
 signInOptions: [{
     provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     scopes: config.scopes
