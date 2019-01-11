@@ -6,33 +6,55 @@
     <title>ToDo List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/todo.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.1/firebaseui.css" />
     <link href="https://fonts.googleapis.com/css?family=Tajawal:400,500,700" rel="stylesheet">    <script type=text/javascript src="assets/js/lib/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+
+    <div id="firebaseui-auth-container"></div>
+    <!-- <div id="loader">Loading...</div> -->
+    <div class="container" id="list-container">
         <h1>To-Do List <i class="fas fa-plus"></i>
-
         </h1>
-        <input type="text" placeholder="Add New Item">
-        <ul>
-            <li><span><i class="fas fa-trash-alt"></i></span> Eat</li>
-            <li><span><i class="fas fa-trash-alt"></i></span> Work Out</li>
-            <li><span><i class="fas fa-trash-alt"></i></span>Get Shit Done</li>
-            <li><span><i class="fas fa-trash-alt"></i></span>Have Fun</li>
-
+        <input class="add-new" type="text" placeholder="Add New Item" autofocus="autofocus">
+        <ul id="notes">
         </ul>
     </div>
     <div class="container instructions">
         <ol>
-            <li>Press the  <i class="fas fa-plus"></i>  to add a new item. </li>
-            <li>Click an item in the list when complete.</li>
+            <li>Sign in. </li>
+            <li>Start typing.</li>
+            <li>Press enter to add an item.</li>
             <li>Click the  <i class="fas fa-trash-alt"></i>  to delete an item.</li>
+            <li>Sign Out whenever you like</li>
         </ol>
+        <button id="logout">Sign Out</button>
     </div>
+    <footer id="footer">Made with <i class="fas fa-heart"></i> by Bashir Harrell<div class="container">
 
-
-    
+    </div></footer>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDx9CXBT4M-5w0zo1R4eRoPnXSglA8UP8Y",
+    authDomain: "to-do-list-a54e1.firebaseapp.com",
+    databaseURL: "https://to-do-list-a54e1.firebaseio.com",
+    projectId: "to-do-list-a54e1",
+    storageBucket: "to-do-list-a54e1.appspot.com",
+    messagingSenderId: "967581202982",
+
+    clientId: "237008584618-jqdg0f818s024hsbnsc2gj40c4qmlnap.apps.googleusercontent.com",
+    scopes: [
+             "email",
+             "profile"
+    ]
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.1/firebaseui.js"></script>
 <script type= text/javascript src="assets/js/todo.js"></script>
 </html>
