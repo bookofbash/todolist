@@ -119,9 +119,7 @@ $("ul").on("click", "span", function(event){
 //Remove from firebase
 var remove = function(e){
     var key = $(this).data('key');
-    if(confirm('Are you sure?')){
       firebase.database().ref("notes").child(key).remove();
-    }
   }
   $("ul").on('click', 'span', remove);
 
